@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Variables and Types</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script>
+
+        const lowerString = "abc";
+        const upperString = "ABC";
+
+        console.group('Strings');
+        console.log(lowerString == upperString);
+
+
+        const shortPi = 3.14;
+        let y = 10;
+
+        var k = x + y;
+        
+        let z = x + y;
+
+        let myString = "abc";    
+
+        console.group('Plus symbol...');
+        console.log('x = ' + x);
+        console.log('x+1 = ' + ++x);
+        
+        console.log(z + myString);
+        console.groupEnd();
+
+        console.groupCollapsed('Booleans...');
+        //truthy or falsy
+        console.log('abc');
+        console.log('is the true?' + Boolean('hello'));
+        console.log('is the true?' + Boolean(''));
+        console.groupEnd();
+
+        //undefined and null
+        console.group('Undefined and null')
+        var abc;
+        console.log(abc);
+        console.groupEnd();
+
+
+
+        </script>
+    </body>
+</html>
