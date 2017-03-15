@@ -6,43 +6,29 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Object Creation</title>
+        <title>Functions</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body onload="callMe('from body onload')">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <button onclick="callMe('a button onClick')">
+            Click Me!
+        </button>
+
         <script>
-
-            const person = {
-                firstName: 'Cody',
-                lastName: 'Ocean'
-            };
-
-            console.log(person);
-
-            const bankAccount = {
-                id = 1111,
-                type = "checking",
-                balance = 1234.56
+            
+            function doSomething() {
+                console.log('I have no parameters');
+            }
+            
+            function callMe(locationInfo) {
+                console.log('I have been called from ' + locationInfo);
             }
 
-            console.log('Account #:' + bankAccount.id +
-                        ' is a ' + bankAccount.type +
-                        ' with a balance of ' +
-                         balance  );
-
-            //can have arrays of objects
-            const peopleArray = [
-                { name: 'Adam', age=45 },
-                { name: 'Judy', age=41 },
-                { name: 'Cody', age=1 },
-            ];
-
-
-
+            callMe('bottom of script page');
 
         </script>
     </body>

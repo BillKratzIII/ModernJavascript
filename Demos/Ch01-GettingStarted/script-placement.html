@@ -6,19 +6,41 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Script Placement</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Prior to HTML5, needed to specify type attribute. -->
+        <script type="text/javascript">
+            alert('Im an annoying little pop-up!');
+        </script>
+        
+        <!-- No longer need type. -->
+        <script>
+            console.log('I am much nicer to see what is going on!');
+        </script>
+
+        
+        <script>
+            function bodyOnloadFunction() {
+                document.getElementById('targetedH2').innerHTML = "New text for h2";
+            }
+        </script>
+    
     </head>
-    <body>
+    <body onload="bodyOnloadFunction()">
         <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <h2 id="targetedH2">
+                In the h2
+        </h2>
+
         <script>
-
-
+            console.log('Messages can be written to the Console');
         </script>
+        <!-- Use an external file to re-use in multiple HTML files -->
         <script src="../scripts/header.js"></script>
     </body>
 </html>

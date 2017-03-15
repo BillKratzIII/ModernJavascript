@@ -6,20 +6,34 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Conditionals</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <script>
 
+           const pets = [
+                {name: 'Birdy', type: 'cat'},
+                {name: 'Roxy', type: 'dog'}
+           ]
+        
+           for (let index = 0; index < pets.length; index++) {
+               console.log(index);
+               console.log(pets[index].name + " is a " + pets[index].type);
+           }
 
-        </script>
-        <script src="../scripts/header.js"></script>
+            //for
+
+
+            // while
+
+            // do while
+
+            //for..of iterator
+        </script>    
     </body>
 </html>
-

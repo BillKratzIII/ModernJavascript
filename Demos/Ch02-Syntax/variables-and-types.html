@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -27,15 +28,14 @@
         console.group('Plus symbol...');
         console.log('x = ' + x);
         console.log('x+1 = ' + ++x);
-        
         console.log(z + myString);
         console.groupEnd();
 
         console.groupCollapsed('Booleans...');
         //truthy or falsy
         console.log('abc');
-        console.log('is the true?' + Boolean('hello'));
-        console.log('is the true?' + Boolean(''));
+        console.log("is this true? Boolean('hello')" + Boolean('hello'));
+        console.log("is this true? Boolean('')" + Boolean(''));
         console.groupEnd();
 
         //undefined and null
@@ -47,5 +47,6 @@
 
 
         </script>
+        <script src="../scripts/header.js"></script>
     </body>
 </html>

@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Displaying Data</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -15,11 +15,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <header id="headerInfo"></header>
+
+        <p id="targetedId"></p>
+
         <script>
-
-
+            let targetId = document.getElementById("targetedId");
+            targetId.innerHTML = "Replaced Content";
         </script>
         <script src="../scripts/header.js"></script>
     </body>
 </html>
-
