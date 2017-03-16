@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Variables and Types</title>
+        <title>Displaying Data</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -15,38 +15,21 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <header id="headerInfo"></header>
+
+        <p id="targetedId"></p>
+
         <script>
-
-        var x = 3;
-        const shortPi = 3.14;
-        let y = 10;
-
-        let z = x + y;
-
-        let myString = "abc";    
-
-        console.group('Plus symbol...');
-        console.log('x = ' + x);
-        console.log('x+1 = ' + ++x);
-        console.log(z + myString);
-        console.groupEnd();
-
-        console.groupCollapsed('Booleans...');
-        //truthy or falsy
-        console.log('abc');
-        console.log("is this true? Boolean('hello')" + Boolean('hello'));
-        console.log("is this true? Boolean('')" + Boolean(''));
-        console.groupEnd();
-
-        //undefined and null
-        console.group('Undefined and null')
-        var abc;
-        console.log(abc);
-        console.groupEnd();
-
-
-
+            let targetId = document.getElementById("targetedId");
+            targetId.innerHTML = "Replaced Content";
         </script>
         <script src="../scripts/header.js"></script>
+
+        <script>  
+            document.write("What is 2+4? :");
+            document.write(2 + 4);
+            document.write('<br />And 3 + 1?<br /> ');
+            document.write(3+1);
+        </script>
     </body>
 </html>

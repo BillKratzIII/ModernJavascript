@@ -6,23 +6,30 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Displaying Data</title>
+        <title>Conditionals</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header id="headerInfo"></header>
-
-        <p id="targetedId"></p>
-
         <script>
-            let targetId = document.getElementById("targetedId");
-            targetId.innerHTML = "Replaced Content";
-        </script>
-        <script src="../scripts/header.js"></script>
+            const hour = 10;  // 10am
+        
+            //if, else if
+            if (hour > 12 && hour < 13) {
+                console.log('It is lunch time');  
+            }
+            else if (hour > 8 && hour < 17) {
+                console.log('class is in session');
+            }
+            else {
+                console.log('go home - class is not in session!');
+            }
+
+
+           
+        </script>    
     </body>
 </html>

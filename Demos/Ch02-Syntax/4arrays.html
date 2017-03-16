@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Console Usage</title>
+        <title>Arrays</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -15,12 +15,31 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-       
         <script>
-            console.log('Messages can be written to the Console');
+            const simpleNameArray = ['Adam','Judy','Cody'];
+            const ages = new Array(45, 41, 1);
+            
+            console.log(simpleNameArray[0] + ' is ' + 
+                                   ages[0] + ' years old');
+
+
+
+            const person = {
+                name: "Adam",
+                age: 45
+            }
+
+           const oneArray = [1,2,3];
+           const secondArray= [1,2,3];
+
+           console.log(oneArray == secondArray)
+
+
+
+
+
+
         </script>
         <script src="../scripts/header.js"></script>
-        <script src="../scripts/consoleDirections.js"></script>
     </body>
 </html>
-

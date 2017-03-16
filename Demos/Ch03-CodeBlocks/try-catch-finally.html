@@ -6,21 +6,49 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Console Usage</title>
+        <title>Try, Catch, Finally</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-       
         <script>
-            console.log('Messages can be written to the Console');
-        </script>
-        <script src="../scripts/header.js"></script>
-        <script src="../scripts/consoleDirections.js"></script>
+            try {
+               // Block of code to try
+            }
+            catch(err) {
+               // Block of code to handle errors
+            } 
+            finally {
+               // Block of code to be executed regardless 
+               // of the try / catch result
+            }
+
+            try {
+               console.log(undefinedVar);
+            }
+            catch(err) {
+               console.log(err);
+            } 
+
+
+            
+            finally {
+               // Block of code to be executed regardless 
+               // of the try / catch result
+            }
+
+
+
+
+           //check for Range Error
+           // call check()
+
+
+           
+
+        </script>    
     </body>
 </html>
-
