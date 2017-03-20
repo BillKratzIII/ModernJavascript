@@ -6,29 +6,28 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Functions</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <script>
-            y;
-            var y = 5;
+            //Functions that can take other functions as arguments are called higher-order functions.
 
-         //   z;              // ReferenceError: x is not defined
-         //   const z = 3;
-            
-            x;              // ReferenceError: x is not defined
-            let x = 3;  
+            //One of the easiest example for higher order functions:
 
-//https://www.safaribooksonline.com/library/view/learning-javascript-3rd/9781491914892/ch07.html#ch_scope
-            
+            const numbers = [2,4,1,5,4]
+
+            function isBiggerThanTwo (num) {  
+            return num > 2
+            }
+
+            console.log(numbers.filter(isBiggerThanTwo) ); 
+
+
         </script>
-        <script src="../scripts/header.js"></script>
     </body>
 </html>
-

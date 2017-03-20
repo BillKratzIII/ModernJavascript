@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Math</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header id="headerInfo"></header>
+
+    <div id="displayNow"></div>
+
+    <script>
+        document.write("<br/>Math.PI=" + Math.PI);
+        document.write("<br/>Math.round(8.8)=" + Math.round(8.8));
+        document.write('<br/>Math.round(1.2)=' + Math.round(1.2));
+        document.write('<br/>Math.pow(2, 3)=' + Math.pow(2, 3));
+        document.write('<br/>Math.sqrt(49) =' + Math.sqrt(49));
+        document.write('<br/>Math.abs(-1.4)=' + Math.abs(-1.4));
+        document.write('<br/>Math.ceil(3.4)=' + Math.ceil(3.4));
+        document.write('<br/>Math.floor(3.4)=' + Math.floor(3.4));
+
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('5 Random Values');
+        for (let x = 0; x < 5; x++) {
+            document.write('<br/>');
+            document.write('Math.random()=' + Math.random());
+        }
+
+        document.write('<br/>');
+        document.write('<br/>5 Values between 0 and 100');
+        for (let x = 0; x < 5; x++) {
+            document.write('<br/>');
+            document.write('Math.floor(Math.random() * 101)=' 
+                      + Math.floor(Math.random() * 101));
+        }
+
+        document.write('<br/>');
+        document.write('<br/>');
+
+        document.write('<br/>call Random function :');
+        document.write(getRandomInteger(0,50));
+       
+        function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
+    </script>
+
+
+    <script src="../scripts/header.js"></script>
+</body>
+
+</html>

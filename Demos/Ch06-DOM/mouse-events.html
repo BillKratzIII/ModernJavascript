@@ -9,37 +9,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dates</title>
+    <title>Mouse Events</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+    <header id="headerInfo"></header>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <header id="headerInfo"></header>
 
-    <div id="displayNow"></div>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Mouse Over Me</div>
 
     <script>
-        let now = new Date();
-        document.getElementById("displayNow").innerHTML = now;
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+        }
 
-        let milliSinceEpoch = new Date(90645645);
-        document.getElementById("displayNow").innerHTML = milliSinceEpoch;
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
 
-        //    let moonLanding = new Date(1969,6,20,20,18,0,0);
-        //    document.getElementById("displayNow").innerHTML = moonLanding;
-
-        // using Date objects
-        var start = Date.now();
-
-        // the event to time goes here:
-        doSomethingForALongTime();
-        var end = Date.now();
-        var elapsed = end - start; // elapsed time in milliseconds
     </script>
 
     <script src="../scripts/header.js"></script>

@@ -9,39 +9,34 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dates</title>
+    <title>Navigator</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+    <header id="headerInfo"></header>
+
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-    <header id="headerInfo"></header>
-
-    <div id="displayNow"></div>
-
     <script>
-        let now = new Date();
-        document.getElementById("displayNow").innerHTML = now;
+        
+        let userAgentString = navigator.userAgent;
+        let platform = navigator.platform;
+        let language = navigator.language;
+        let online = navigator.onLine;
 
-        let milliSinceEpoch = new Date(90645645);
-        document.getElementById("displayNow").innerHTML = milliSinceEpoch;
+        document.write('User Agent: ' + userAgentString);
+        document.write('<br />');
+        document.write('Platform: ' + platform);
+        document.write('<br />');
+        document.write('Language: ' + language);
+        document.write('<br />');
+        document.write('Is browser online?: ' + online);
+        
 
-        //    let moonLanding = new Date(1969,6,20,20,18,0,0);
-        //    document.getElementById("displayNow").innerHTML = moonLanding;
-
-        // using Date objects
-        var start = Date.now();
-
-        // the event to time goes here:
-        doSomethingForALongTime();
-        var end = Date.now();
-        var elapsed = end - start; // elapsed time in milliseconds
     </script>
-
     <script src="../scripts/header.js"></script>
 </body>
 

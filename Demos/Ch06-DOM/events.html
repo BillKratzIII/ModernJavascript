@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dates</title>
+    <title>Events</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -18,29 +18,35 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
     <header id="headerInfo"></header>
 
-    <div id="displayNow"></div>
+    <button onclick="this.innerHTML=Date()">Click for the Time</button>
 
+    <br /><br /><hr />
+     
+
+    <label for="fname">Type in capital letters, then click away</label>
+    <input type="text" id="fname" onchange="lowerCase()">
     <script>
-        let now = new Date();
-        document.getElementById("displayNow").innerHTML = now;
-
-        let milliSinceEpoch = new Date(90645645);
-        document.getElementById("displayNow").innerHTML = milliSinceEpoch;
-
-        //    let moonLanding = new Date(1969,6,20,20,18,0,0);
-        //    document.getElementById("displayNow").innerHTML = moonLanding;
-
-        // using Date objects
-        var start = Date.now();
-
-        // the event to time goes here:
-        doSomethingForALongTime();
-        var end = Date.now();
-        var elapsed = end - start; // elapsed time in milliseconds
+        function lowerCase() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toLowerCase();
+        }
     </script>
+
+    <br /><br /><hr />
+    
+    
+    <button id="simpleButton">Dynamically Clickable</button>
+    <script>
+        document.getElementById("simpleButton").addEventListener("click", sayHello);
+        
+        function sayHello() {
+            alert('Hello');
+        }
+    </script>
+
+    <br /><br /><hr />
 
     <script src="../scripts/header.js"></script>
 </body>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Window Objects</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> button { display: block; 
+                     margin-top: 20px;
+                   } </style>
+</head>
+
+<body>
+    <header id="headerInfo"></header>
+
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div id="targetId"></div>
+    <script>
+        document.getElementById("targetId").innerHTML =
+            "Page URL is " + window.location.href;
+
+       
+
+        function loadMDN() {
+            window.location.assign("https://developer.mozilla.org/en-US/docs/Web/API/Window")
+        }
+
+        function callAlert(message) {
+            alert(message);
+        }
+
+        function confirmSomething() {
+            let output = document.getElementById("confirmOutput");
+            let outputText = '';
+            if (window.confirm("Do you really want to delete ALL of the data?")) {
+                outputText = 'You chose to delete it all!';
+            }
+            else {
+                outputText = 'You hit cancel - whew!';
+            }
+            output.innerHTML = outputText;
+
+        }
+
+        function promptSomething() {
+            let output = document.getElementById("promptOutput");
+            output.innerHTML = '';
+
+            let name = prompt("What is your name?");
+
+            let experience =
+                window.prompt('What level of experience do you have in JavaScript?', '1');
+
+            let result = window.prompt('Message to display', 'default');
+
+            //convert string to numeric
+            let moreExperience = +experience + 1;
+
+            output.innerHTML = name + " let's get you to a level " + moreExperience;
+        }
+
+        function timeOutFunctionn() {
+            alert('in timeout laert');
+        }
+
+
+        var intervalID;
+        function intervalFunction() {
+            intervalID = window.setInterval(myCallback, 1000);
+        }
+        function cancelIntervalFunction() {
+             clearInterval(intervalID);
+        }
+        function myCallback() {
+            let intervalOutputDiv = document.getElementById("intervalOutput");
+            intervalOutputDiv.innerHTML +=  intervalID++;
+        }
+        
+    </script>
+
+    <button onclick="loadMDN()">
+        Reload Page with MDN: Window
+    </button>
+
+    <hr />
+
+    <button onclick="callAlert('Im an alert!')">
+    Click for an alert</button>
+    <hr />
+
+    <button onclick="confirmSomething()">
+        Click for a confirm</button>
+    <div id="confirmOutput"></div>
+
+ <hr />
+
+    <button onclick="promptSomething()">
+        Click for a prompt</button>
+    <div id="promptOutput"></div>
+
+ 
+ <hr />
+
+    <button onclick="aTimeoutReference = setTimeout(timeOutFunction, 3000)">
+        Alert after 3 seconds</button>
+    <button onclick="clearTimeout(aTimeoutReference)">ClearTimout</button>
+
+ <hr />
+    <button onclick="intervalFunction()">
+        Update output every 3 seconds</button>
+    <button onclick="cancelIntervalFunction()">ClearInterval</button>
+    <div id="intervalOutput"></div>
+ <hr />
+   
+
+    <script src="../scripts/header.js"></script>
+</body>
+
+</html>

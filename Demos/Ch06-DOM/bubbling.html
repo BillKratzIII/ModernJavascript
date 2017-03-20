@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bubbling</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+                div { width: 80%; padding: 50px;}
+        
+                #outer {border: 2px solid blue;
+                        height: 400px; }
+
+                #inner {border: 2px solid red;height:200px}
+                #target {border: 2px solid green;height:50px}
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header id="headerInfo"></header>
+        
+        <div id="outer">Outer Div
+            <div id="inner">Inner Div
+                <div id="target">
+                        Click this target
+                </div>
+            </div>
+        </div>
+
+        <button onclick="addClickEvents()">Add Click Event to div tags</button>
+        
+        <script>
+            function addClickEvents() {
+                   let divElements = document.getElementsByTagName('div'); 
+                   for (elem in divElements) {
+                       elem.addEventListener("click", divAlert, false)
+                   }
+            }
+
+            function divAlert() {
+                alert('in a div');
+                //TODO: update this so that it displays its containers id value
+            }
+
+        </script>
+        <script src="../scripts/header.js"></script>
+    </body>
+</html>

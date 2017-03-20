@@ -6,29 +6,33 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Window.screen</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
+         <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <script>
-            y;
-            var y = 5;
+            document.write("Screen Width: " + screen.width);
+            document.write('<br />');
+            document.write("Screen Height: " + screen.height);
+            document.write('<br />');
+            document.write("Available Screen Width: " + screen.availWidth);
+            document.write('<br />');
+            document.write("Available Screen Height: " + screen.availHeight);
+            document.write('<br />');
+            document.write("Color Depth(# of bits to display one color): " + screen.colorDepth);
+            document.write('<br />');
+            document.write("Screen Pixel Depth: " + screen.pixelDepth);
+  
+        
 
-         //   z;              // ReferenceError: x is not defined
-         //   const z = 3;
-            
-            x;              // ReferenceError: x is not defined
-            let x = 3;  
-
-//https://www.safaribooksonline.com/library/view/learning-javascript-3rd/9781491914892/ch07.html#ch_scope
-            
         </script>
+
         <script src="../scripts/header.js"></script>
     </body>
 </html>
-

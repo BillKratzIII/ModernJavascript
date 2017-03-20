@@ -6,29 +6,23 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Callbacks</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <script>
-            y;
-            var y = 5;
+// This is how callbacks were born:
+//  if you pass a function to another function as a parameter, 
+//  you can call it within the function when you are finished with 
+//  your job. No need to return values, only calling another 
+//  function with the values.
 
-         //   z;              // ReferenceError: x is not defined
-         //   const z = 3;
-            
-            x;              // ReferenceError: x is not defined
-            let x = 3;  
 
-//https://www.safaribooksonline.com/library/view/learning-javascript-3rd/9781491914892/ch07.html#ch_scope
-            
         </script>
-        <script src="../scripts/header.js"></script>
     </body>
 </html>
 

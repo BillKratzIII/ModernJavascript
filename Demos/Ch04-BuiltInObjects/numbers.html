@@ -6,29 +6,42 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hoisting</title>
+        <title>Numbers</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header id="headerInfo"></header>
+       <header id="headerInfo"></header>
+       
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <script>
-            y;
-            var y = 5;
+            let x = 3.141592653589;
+            console.log(x.toFixed(0));           // returns 3
+            console.log(x.toFixed(2));           // returns 3.14
+            console.log(x.toFixed(4));           // returns 3.1416
 
-         //   z;              // ReferenceError: x is not defined
-         //   const z = 3;
-            
-            x;              // ReferenceError: x is not defined
-            let x = 3;  
+            let y = 8.899;
+            console.log(y.toFixed(0));           // returns 9
+            console.log(y.toFixed(2));           // returns 8.90
 
-//https://www.safaribooksonline.com/library/view/learning-javascript-3rd/9781491914892/ch07.html#ch_scope
+            console.log( Number(true) ) ;
+            console.log( Number(false) ) ;
+            console.log( Number("1111") ) ;
+            console.log( Number("89 98") ) ;
+
+            console.log( parseFloat("11.11") );
+            console.log( typeof parseFloat("11.11") );
+
+            console.log( parseInt("11.11") );
+            console.log( typeof parseInt("11.11"));
             
+       
+
+
+
         </script>
         <script src="../scripts/header.js"></script>
     </body>
 </html>
-
