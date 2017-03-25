@@ -1,0 +1,88 @@
+﻿
+<html>
+	<head>
+		<title>Form Validation</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+
+		<script>
+			function validate() {
+				let result = true ;
+				alert( band1.name ) ;
+			
+				document.getElementById("name_error").innerHTML = "" ;
+				if ( document.validateform.name.value == "" ) {
+                	document.getElementById("name_error").innerHTML = "Please enter your name" ;
+					document.validateform.name.focus() ;
+			 		result = false ;
+				}
+
+				document.getElementById("zip_error").innerHTML = "" ;
+				if ( document.validateform.zip.value == "" ||
+			         isNaN( document.validateform.zip.value ) ||
+					document.validateform.zip.value.length != 5 ) {
+                	document.getElementById("zip_error").innerHTML =  "Please enter your 5 digit zip code" ;
+					document.validateform.zip.value = "" ;
+					document.validateform.zip.focus() ;
+			 		result = false ;
+				}
+                return result ;
+            }
+
+			function chooseOption(element) {
+				document.radioform.cream.disabled = element.value != "Scone" ;
+				document.radioform.desert.style.visibility = element.value == "Other" ? "visible" : "hidden" ;
+			}
+
+			function validateOption() {
+				alert( "Starter " + document.radioform.starters.value ) ;
+				const radios = document.radioform.choose ;
+				alert( "After " + radios.value ) ;
+				return false ;
+			}
+
+			function showOrder() {
+				const order = document.radioform.order ;
+				const starter = document.getElementById('starters') ;
+				order.value = starter.options[starter.selectedIndex].innerHTML + "\n" + document.radioform.choose.value ;
+			}
+
+			window.onload = function() {
+				document.getElementById( "form3" ).addEventListener( "submit", function( event ) {
+					alert( "Stopping commit" ) ;
+					event.preventDefault() ;
+				});
+			};
+
+        </script>
+	</head>
+	<body>
+		<h1>Form Validation</h1>
+
+        <form id="form1" action="done.html" name="validateform" onsubmit="return validate();">
+            Name: <input type="text" name="name" /><span id="name_error" class="error"></span><br/>
+			Zip Code: <input type="text" name="zip" /><span id="zip_error" class="error"></span><br/>
+            <input type="submit" name="submit" value="Enter" />
+        </form>
+
+		<form id="form2" action="done.html" name="radioform" onsubmit="return validateOption();">
+			<select id="starters" name="starters">
+				<option value="soup">Soup</option>
+				<option value="oysters">Oysters</option>
+				<option value="salmon">Smoked Salmon</option>
+			</select><br/>
+			<input type="radio" name="choose" value="Cake" onclick="chooseOption(this);" checked />Cake<br/>
+			<input type="radio" name="choose" value="Scone" onclick="chooseOption(this);" />Scone
+			<input type="checkbox" name="cream" value="Cream" disabled/>Cream<br/>
+			<input type="radio" name="choose" value="Other" onclick="chooseOption(this);" />Other
+			<input type="text" id="desert" name="desert" style="visibility:hidden"/><br/>
+			<textarea name="order" rows="3" cols="20"></textarea><br/>
+			<input type="button" onclick="showOrder();" value = "Order"/>
+			<input type="submit" name="submit" value="Select" />
+		</form>
+
+		<form id="form3" action="done.html" name="form3">
+			<input type="submit" name="submit" value="Select" />
+		</form>
+	</body>
+</html>
+ 
