@@ -1,0 +1,48 @@
+<html>
+    <head>
+		<title>Objects</title>
+
+        <script>
+            function getText() {
+                return "Hello" ;
+            }
+        </script>
+         <script>
+            function getText() {
+                return "Bonjour" ;
+            }
+
+            const Person = {
+                "firstName": "Carole",
+                "lastName": "King",
+                "fullName": function() {
+                    return this.firstName + ' ' + this.lastName ;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            const numbers = new Array( 1, 2, 3, 4, 5 ) ;
+            console.log( 'Numbers length ' + numbers.length ) ;
+        </script>
+        <script>
+            console.log( getText() ) ;
+
+            console.log( "Person " + Person.fullName() ) ;
+
+            function multiply1( a, b ) {
+                b = typeof b !== 'undefined' ? b : 2 ;
+                return a * b ;
+            }
+
+            console.log( multiply1( 5 ) ) ;
+
+            function multiply2( a, b = 2 ) {
+                return a * b ;
+            }
+
+            console.log( multiply2( 5 ) ) ;
+        </script>
+    </body>
+</html>
