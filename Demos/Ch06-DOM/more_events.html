@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Events</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+
+		<script>
+            function process(element,event) {
+                element.value = 'Event ' + event.type ;
+            }
+
+            function processText(event) {
+                document.eventForm.activity.value = 'Key ' + event.keyCode + " " + event.key ;
+            }
+
+            function processMultiple(element,message) {
+                element.value += message ;
+            }
+
+            window.onload = function() {
+                const bubble = document.getElementById( "bubble" ) ;
+                document.getElementById( "multiply" ).addEventListener('click', 
+                    function() { bubble.value += 'Text\n' }, true ) ;
+                document.getElementById( "eventForm" ).addEventListener('click',
+                    function() { bubble.value += 'Form\n' }, true ) ;
+            }
+
+            function addOrder() {
+                const order = document.getElementById('order') ;
+                const starter = document.getElementById('starters') ;
+                const item = document.createElement('li') ;
+                item.innerHTML = starter.options[starter.selectedIndex].innerHTML ;
+                order.appendChild( item ) ;
+            }
+
+            function remove() {
+                const optional = document.getElementById('optional') ;
+                optional.outerHTML = '' ;
+            }
+
+            function colourMe() {
+                document.getElementById('colourme').style.color = document.changecss.colour.value ;
+            }
+        </script>
+	</head>
+	<body>
+		<h1>Events</h1>
+        <form id="eventForm" name="eventForm">
+            <input type="text" name="activity" onclick="process(this,event)"
+                   onmouseover="process(this,event)" onmouseout="process(this,event)"/>
+            <input type="text" name="keyboard" onkeydown="processText(event)"/>
+            <input id="multiple" type="text" name="multiple" onclick="processMultiple(this,'1')"
+                   onclick="processMultiple(this,'2')"/>
+            <input id="multiply" type="text" name="multiply"/><br/>
+            <textarea id="bubble" name="bubble" rows="3" cols="20"></textarea><br/>
+
+            <select id="starters" name="starters">
+				<option value="soup">Soup</option>
+				<option value="oysters">Oysters</option>
+				<option value="salmon">Smoked Salmon</option>
+			</select><br/>
+            <input type="button" onclick="addOrder();" value = "Order"/>
+
+            <input type="button" onclick="remove();" value = "Remove"/>
+        </form>
+        <ul id="order">
+        </ul>
+
+        <p id="optional">This is optional text</p>
+
+        <form name="changecss">
+            <input type="radio" name="colour" value="red" checked />Red<br/>
+            <input type="radio" name="colour" value="green" />Green<br/>
+            <input type="radio" name="colour" value="blue" />Blue<br/>
+            <input type="radio" name="colour" value="custom" />Custom<br/>
+            <input type="button" onclick="colourMe();" value = "Colour"/>
+        </form>
+        <p id="colourme">This is colourful text</p>
+    </body>
+</html>

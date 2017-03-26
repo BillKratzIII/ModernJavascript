@@ -1,0 +1,99 @@
+<html>
+    <head>
+		<title>Objects</title>
+
+        <script>
+            const band1 = {
+                "name": "Pink Floyd",
+                "country": "England",
+                "yearFormed": 1965,
+                "genres": ["Progresssive Rock", "Psychedelic Rock", "Art Rock"]
+            }
+
+            function showBands() {
+                for ( let property in band1 ) {
+                    document.bands.bandData.value += band1[property] + "\n" ;
+                }
+            }
+
+            function Student( firstName, lastName ) {
+                if ( ! ( this instanceof Student ) ) {
+                    return new Student( firstName, lastName ) ;
+                }
+                this.firstName = firstName ;
+                this.lastName = lastName ;
+                this.fullName = function() {
+                    return this.firstName + ' ' + this.lastName ;
+                }
+            }
+
+            function showStudent1() {
+                const student = new Student( "Peter", "Jones" ) ;
+                for ( let property in student ) {
+                    document.bands.bandData.value += student[property] + "\n" ;
+                }
+                let fullName = student.fullName() ;
+                document.bands.bandData.value += fullName + "\n" ;
+            }
+
+            function showStudent2() {
+                const student = Student( "Peter", "Jones" ) ;
+                for ( let property in student ) {
+                    document.bands.bandData.value += student[property] + "\n" ;
+                }
+            }
+
+            function showStudent3() {
+                const student = { firstName: "Peter", lastName: "Jones" } ;
+                for ( let property in student ) {
+                    document.bands.bandData.value += student[property] + "\n" ;
+                }
+            }
+
+            function showStudent4() {
+                const student = Object.create( Object.prototype ) ;
+                student.firstName = "Peter" ;
+                student.lastName = "Jones" ;
+                for ( let property in student ) {
+                    document.bands.bandData.value += student[property] + "\n" ;
+                }
+            }
+
+            function showStudent5() {
+                const pupil = {} ;
+                pupil.yearEnrolled = 2017 ;
+                const student = Object.create( pupil ) ;
+                student.firstName = "Peter" ;
+                student.lastName = "Jones" ;
+                for ( let property in student ) {
+                    document.students.studentData.value += student[property] + "\n" ;
+                }
+            }
+
+            function showStudent6() {
+                Student.prototype.toString = function() {
+                    return this.firstName + ' ' + this.lastName ;
+                }
+                const student = new Student( "Peter", "Jones" ) ;
+                document.students.studentData.value += student + "\n" ;
+
+                for ( let property in student ) {
+                    document.students.studentData.value += student[property] + "\n" ;
+                }
+                let fullName = student.fullName() ;
+                document.students.studentData.value += fullName + "\n" ;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="bands">
+            <textarea name="bandData" rows="10" cols="20"></textarea><br/>
+			<input type="button" onclick="showBands();" value = "Show Band"/>
+            <input type="button" onclick="showStudent4();" value = "Show Student"/>
+        </form>
+        <form name="students">
+            <textarea name="studentData" rows="10" cols="20"></textarea><br/>
+			<input type="button" onclick="showStudent6();" value = "Show Student"/>
+        </form>
+    </body>
+</html>
