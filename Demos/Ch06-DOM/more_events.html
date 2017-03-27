@@ -12,18 +12,6 @@
                 document.eventForm.activity.value = 'Key ' + event.keyCode + " " + event.key ;
             }
 
-            function processMultiple(element,message) {
-                element.value += message ;
-            }
-
-            window.onload = function() {
-                const bubble = document.getElementById( "bubble" ) ;
-                document.getElementById( "multiply" ).addEventListener('click', 
-                    function() { bubble.value += 'Text\n' }, true ) ;
-                document.getElementById( "eventForm" ).addEventListener('click',
-                    function() { bubble.value += 'Form\n' }, true ) ;
-            }
-
             function addOrder() {
                 const order = document.getElementById('order') ;
                 const starter = document.getElementById('starters') ;
@@ -33,8 +21,8 @@
             }
 
             function remove() {
-                const optional = document.getElementById('optional') ;
-                optional.outerHTML = '' ;
+                const order = document.getElementById('order') ;
+                order.innerHTML = '' ;
             }
 
             function colourMe() {
@@ -55,16 +43,18 @@
         </script>
 	</head>
 	<body>
-		<h1>Events</h1>
+		<h2>Events</h2>
+        <p>Move the mouse in and out of the Event box and click in the box to see events.<br/>
+        Focus on the text box and type keys to seee key events in the Event box.</p>
         <form id="eventForm" name="eventForm">
-            <input type="text" name="activity" onclick="process(this,event)"
-                   onmouseover="process(this,event)" onmouseout="process(this,event)"/>
-            <input type="text" name="keyboard" onkeydown="processText(event)"/>
-            <input id="multiple" type="text" name="multiple" onclick="processMultiple(this,'1')"
-                   onclick="processMultiple(this,'2')"/>
-            <input id="multiply" type="text" name="multiply"/><br/>
-            <textarea id="bubble" name="bubble" rows="3" cols="20"></textarea><br/>
-
+            Event: <input type="text" name="activity" onclick="process(this,event)"
+                   onmouseover="process(this,event)" onmouseout="process(this,event)"/><br/>
+            Text: <input type="text" name="keyboard" onkeydown="processText(event)"/>
+        </form>
+        
+        <h2>Add and remove elements</h2>
+        <p>Select an item and hit Order to add to the order. Hot remove to remove all orders.</p>
+        <form name="orderForm">
             <select id="starters" name="starters">
 				<option value="soup">Soup</option>
 				<option value="oysters">Oysters</option>
@@ -74,11 +64,12 @@
 
             <input type="button" onclick="remove();" value = "Remove"/>
         </form>
+        <p>Your order</p>
         <ul id="order">
         </ul>
 
-        <p id="optional">This is optional text</p>
-
+        <h2>Changing style colour</h2>
+        <p>Select a colour and hit the colour button to apply</p>
         <form name="changecss">
             <input type="radio" name="colour" value="red" checked />Red<br/>
             <input type="radio" name="colour" value="green" />Green<br/>
@@ -87,12 +78,15 @@
         </form>
         <p id="colourme">This is colourful text</p>
 
+        <h2>Changing CSS class</h2>
+
+        <p>Select an option and hit the style button to apply</p>
         <form name="changeclass">
-            <input type="radio" name="colour" value="Set" checked />Set<br/>
-            <input type="radio" name="colour" value="Add" />Add<br/>
-            <input type="radio" name="colour" value="Clear" />Clear<br/>
-            <input type="button" onclick="changeClass();" value = "Colour"/>
+            <input type="radio" name="colour" value="Set" checked />Set text size<br/>
+            <input type="radio" name="colour" value="Add" />Add colour<br/>
+            <input type="radio" name="colour" value="Clear" />Clear styles<br/>
+            <input type="button" onclick="changeClass();" value = "Style"/>
         </form>
-        <p id="styleme">This is colourful text</p>
+        <p id="styleme">This is styled text</p>
     </body>
 </html>

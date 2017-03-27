@@ -37,17 +37,10 @@
         
         <script>
             function addClickEvents() {
-                   let divElements = document.getElementsByTagName('div'); 
-                   for (elem in divElements) {
-                       elem.addEventListener("click", divAlert, false)
-                   }
+                   document.getElementById('outer').addEventListener("click", function() { alert( 'In outer') ;}, false); 
+                   document.getElementById('inner').addEventListener("click", function() { alert( 'In inner') ;}, false); 
+                   document.getElementById('target').addEventListener("click", function() { alert( 'In target') ;}, false); 
             }
-
-            function divAlert() {
-                alert('in a div');
-                //TODO: update this so that it displays its containers id value
-            }
-
         </script>
         <script src="../scripts/header.js"></script>
     </body>

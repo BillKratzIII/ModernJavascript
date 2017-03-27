@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Events</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+
+		<script>
+            function processMultiple(element,message) {
+                element.value += message ;
+            }
+        </script>
+	</head>
+	<body>
+		<h1>Multiple Events</h1>
+        <p>Click on text box to see which of the two events get processed</p>
+        <form id="eventForm" name="eventForm">
+            <input id="multiple" type="text" name="multiple" onclick="processMultiple(this,'Event 1')"
+                   onclick="processMultiple(this,'Event 2')"/>
+        </form>
+     </body>
+</html>
