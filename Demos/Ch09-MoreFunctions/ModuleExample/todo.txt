@@ -1,0 +1,5 @@
+add example here of using CommonJS / Browserify
+
+somethign simple - basic 
+
+to illustrate the point

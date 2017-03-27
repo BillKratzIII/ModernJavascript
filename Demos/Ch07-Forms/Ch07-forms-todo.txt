@@ -1,2 +1,0 @@
-create an example form where clicking on 'Other' causes 
-another field to appear and to be required
