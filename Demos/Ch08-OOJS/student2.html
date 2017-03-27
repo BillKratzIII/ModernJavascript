@@ -1,0 +1,31 @@
+<html>
+    <head>
+		<title>Objects</title>
+
+        <script>
+            function Student( firstName, lastName ) {
+                if ( ! ( this instanceof Student ) ) {
+                    return new Student( firstName, lastName ) ;
+                }
+                this.firstName = firstName ;
+                this.lastName = lastName ;
+                this.fullName = function() {
+                    return this.firstName + ' ' + this.lastName ;
+                }
+            }
+
+            function showStudent2() {
+                const student = Student( "Peter", "Jones" ) ;
+                for ( let property in student ) {
+                    document.students.studentData.value += student[property] + "\n" ;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="students">
+            <textarea name="studentData" rows="10" cols="20"></textarea><br/>
+			<input type="button" onclick="showStudent2();" value = "Show Student"/>
+        </form>
+    </body>
+</html>

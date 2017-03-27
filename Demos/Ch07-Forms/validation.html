@@ -30,20 +30,17 @@
 
 			function chooseOption(element) {
 				document.radioform.cream.disabled = element.value != "Scone" ;
-				document.radioform.desert.style.visibility = element.value == "Other" ? "visible" : "hidden" ;
-			}
-
-			function validateOption() {
-				alert( "Starter " + document.radioform.starters.value ) ;
-				const radios = document.radioform.choose ;
-				alert( "After " + radios.value ) ;
-				return false ;
+				document.radioform.dessert.style.visibility = element.value == "Other" ? "visible" : "hidden" ;
 			}
 
 			function showOrder() {
 				const order = document.radioform.order ;
 				const starter = document.getElementById('starters') ;
-				order.value = starter.options[starter.selectedIndex].innerHTML + "\n" + document.radioform.choose.value ;
+				let dessert = document.radioform.choose.value ;
+				if ( dessert = 'Other' ) {
+					dessert = document.radioform.dessert.value ;
+				}
+				order.value = starter.options[starter.selectedIndex].innerHTML + "\n" + dessert ;
 			}
 
 			window.onload = function() {
@@ -56,14 +53,17 @@
         </script>
 	</head>
 	<body>
-		<h1>Form Validation</h1>
-
+		<h2>Form Validation</h2>
+		<p>Form submission will be stopped and error meassages displayed if validation failes.</p>
         <form id="form1" action="done.html" name="validateform" onsubmit="return validate();">
             Name: <input type="text" name="name" /><span id="name_error" class="error"></span><br/>
 			Zip Code: <input type="text" name="zip" /><span id="zip_error" class="error"></span><br/>
             <input type="submit" name="submit" value="Enter" />
         </form>
 
+		<h2>Reading Controls</h2>
+		<p>Select a started and a main and hit Order to see it.</p>
+		<p>If other is selected a text area will be displayed where another item can be entered.</p>
 		<form id="form2" action="done.html" name="radioform" onsubmit="return validateOption();">
 			<select id="starters" name="starters">
 				<option value="soup">Soup</option>
@@ -74,12 +74,13 @@
 			<input type="radio" name="choose" value="Scone" onclick="chooseOption(this);" />Scone
 			<input type="checkbox" name="cream" value="Cream" disabled/>Cream<br/>
 			<input type="radio" name="choose" value="Other" onclick="chooseOption(this);" />Other
-			<input type="text" id="desert" name="desert" style="visibility:hidden"/><br/>
+			<input type="text" id="dessert" name="dessert" style="visibility:hidden"/><br/>
 			<textarea name="order" rows="3" cols="20"></textarea><br/>
 			<input type="button" onclick="showOrder();" value = "Order"/>
-			<input type="submit" name="submit" value="Select" />
 		</form>
 
+		<h2>Stopping Form Submission</h2>
+		<p>Submitting the form will be stopped by displaying an alert and using prevetnDefault</p>
 		<form id="form3" action="done.html" name="form3">
 			<input type="submit" name="submit" value="Select" />
 		</form>

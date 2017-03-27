@@ -1,0 +1,26 @@
+<html>
+    <head>
+		<title>Objects</title>
+
+        <script>
+            const band1 = {
+                "name": "Pink Floyd",
+                "country": "England",
+                "yearFormed": 1965,
+                "genres": ["Progresssive Rock", "Psychedelic Rock", "Art Rock"]
+            }
+
+            function showBands() {
+                for ( let property in band1 ) {
+                    document.bands.bandData.value += band1[property] + "\n" ;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="bands">
+            <textarea name="bandData" rows="10" cols="20"></textarea><br/>
+			<input type="button" onclick="showBands();" value = "Show Band"/>
+         </form>
+    </body>
+</html>

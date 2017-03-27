@@ -1,0 +1,24 @@
+<html>
+    <head>
+		<title>Objects</title>
+
+        <script>
+            function showStudent5() {
+                const pupil = {} ;
+                pupil.yearEnrolled = 2017 ;
+                const student = Object.create( pupil ) ;
+                student.firstName = "Peter" ;
+                student.lastName = "Jones" ;
+                for ( let property in student ) {
+                    document.students.studentData.value += student[property] + "\n" ;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="students">
+            <textarea name="studentData" rows="10" cols="20"></textarea><br/>
+			<input type="button" onclick="showStudent5();" value = "Show Student"/>
+        </form>
+    </body>
+</html>
