@@ -1,6 +1,3 @@
-/**
- * Created by Matthew on 2/2/2017.
- */
 
 function addBand() {
     var myForm = document.getElementById('myForm');

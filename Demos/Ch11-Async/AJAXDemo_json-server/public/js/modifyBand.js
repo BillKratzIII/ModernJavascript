@@ -1,6 +1,4 @@
-/**
- * Created by Matthew on 2/3/2017.
- */
+
 
 function modifyBand(id) {
     var xhr = new XMLHttpRequest();

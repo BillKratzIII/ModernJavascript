@@ -1,6 +1,4 @@
-/**
- * Created by Matthew on 2/1/2017.
- */
+
 
 function bandsTable() {
     var xhr = new XMLHttpRequest();
