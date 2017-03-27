@@ -40,6 +40,18 @@
             function colourMe() {
                 document.getElementById('colourme').style.color = document.changecss.colour.value ;
             }
+
+            function changeClass() {
+                const element = document.getElementById('styleme') ;
+                const action = document.changeclass.colour.value ;
+                if ( action == "Set" ) {
+                    element.className = "setSize" 
+                } else if ( action == "Add" ) {
+                    element.className += " setColour" ;
+                } else {
+                    element.className = "" ;
+                }
+            }
         </script>
 	</head>
 	<body>
@@ -71,9 +83,16 @@
             <input type="radio" name="colour" value="red" checked />Red<br/>
             <input type="radio" name="colour" value="green" />Green<br/>
             <input type="radio" name="colour" value="blue" />Blue<br/>
-            <input type="radio" name="colour" value="custom" />Custom<br/>
             <input type="button" onclick="colourMe();" value = "Colour"/>
         </form>
         <p id="colourme">This is colourful text</p>
+
+        <form name="changeclass">
+            <input type="radio" name="colour" value="Set" checked />Set<br/>
+            <input type="radio" name="colour" value="Add" />Add<br/>
+            <input type="radio" name="colour" value="Clear" />Clear<br/>
+            <input type="button" onclick="changeClass();" value = "Colour"/>
+        </form>
+        <p id="styleme">This is colourful text</p>
     </body>
 </html>

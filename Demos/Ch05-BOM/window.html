@@ -69,21 +69,23 @@
             output.innerHTML = name + " let's get you to a level " + moreExperience;
         }
 
-        function timeOutFunctionn() {
-            alert('in timeout laert');
+        let aTimeoutReference ;
+        function timeOutFunction() {
+            alert('in timeout alert');
         }
 
 
-        var intervalID;
+        let intervalID;
+        let counter = 1 ;
         function intervalFunction() {
-            intervalID = window.setInterval(myCallback, 1000);
+            intervalID = window.setInterval(myCallback, 3000);
         }
         function cancelIntervalFunction() {
              clearInterval(intervalID);
         }
         function myCallback() {
             let intervalOutputDiv = document.getElementById("intervalOutput");
-            intervalOutputDiv.innerHTML +=  intervalID++;
+            intervalOutputDiv.innerHTML +=  counter++;
         }
         
     </script>
@@ -111,7 +113,7 @@
  
  <hr />
 
-    <button onclick="aTimeoutReference = setTimeout(timeOutFunction, 3000)">
+    <button onclick="aTimeoutReference = setInterval(timeOutFunction, 3000)">
         Alert after 3 seconds</button>
     <button onclick="clearTimeout(aTimeoutReference)">ClearTimout</button>
 
