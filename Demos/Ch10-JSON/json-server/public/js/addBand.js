@@ -1,4 +1,3 @@
-
 function addBand() {
     var myForm = document.getElementById('myForm');
     var formData = new FormData(myForm);
@@ -12,12 +11,6 @@ function addBand() {
         "country": formData.get('country'),
         "yearFormed": formData.get('yearFormed'),
         "genres": formData.get('genres').split(',')
-    };
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status == 200) {
-            console.log('Successfully added band!'); //Outputs a DOMString by default
-        }
     };
 
     xhr.open('POST', url, true);
