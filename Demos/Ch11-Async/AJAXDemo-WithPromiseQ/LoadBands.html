@@ -30,7 +30,6 @@ function myFunction(jsonData) {
     var bands = jsonData.bands.band;
     var i;
     for(i = 0; i < bands.length; i++) {
-    	
         out += bands[i].name + ' was formed ' + bands[i].yearFormed + ' in '+ bands[i].city + '<br/>';
     }
     document.getElementById("showBands").innerHTML = out;
