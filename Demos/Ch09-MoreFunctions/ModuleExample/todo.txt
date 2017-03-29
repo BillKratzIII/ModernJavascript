@@ -1,5 +1,2 @@
-add example here of using CommonJS / Browserify
+acopy example from Node ch 0b to here
 
-somethign simple - basic 
-
-to illustrate the point

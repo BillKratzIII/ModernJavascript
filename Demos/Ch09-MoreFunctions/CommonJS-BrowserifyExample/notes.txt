@@ -1,0 +1,5 @@
+To bundle the code:
+    browserify index.js -o bundle.js
+
+To look at the result:
+    Load the test.html in a browser.
