@@ -29,6 +29,7 @@
             }
 
 			function chooseOption(element) {
+				document.radioform.cream.checked = false ;
 				document.radioform.cream.disabled = element.value != "Scone" ;
 				document.radioform.dessert.style.visibility = element.value == "Other" ? "visible" : "hidden" ;
 			}
@@ -37,7 +38,10 @@
 				const order = document.radioform.order ;
 				const starter = document.getElementById('starters') ;
 				let dessert = document.radioform.choose.value ;
-				if ( dessert = 'Other' ) {
+				if ( document.radioform.cream.checked ) {
+					dessert += " with cream" ;
+				}
+				if ( dessert == 'Other' ) {
 					dessert = document.radioform.dessert.value ;
 				}
 				order.value = starter.options[starter.selectedIndex].innerHTML + "\n" + dessert ;
