@@ -1,3 +1,7 @@
+Add browserify as a command line tool
+Use npm
+    npm install -g browserify
+
 To bundle the code:
     browserify index.js -o bundle.js
 
