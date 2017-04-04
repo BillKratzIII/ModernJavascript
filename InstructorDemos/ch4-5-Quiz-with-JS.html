@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Quiz - Using JS</title>
+
+<script>
+var questions = ["In what year did the Beatles first appear on the Ed Sullivan Show?",
+                 "Who is the fastest guitar player?",
+                 "How many symphonies did Beethoven compose?"];
+                 
+var answers = ["February 9th, 1964",
+               "Nepali guitarist Nirvana Bista reportedly became the world's fastest guitar player by delivering the \"Flight of the Bumblebee\" piece at the astonishing speed of 1,600 BPM",
+               "he wrote nine symphonies, 32 piano sonatas, one opera, five piano concertos, and many chamber works including some ground-breaking string quartets"];
+
+/* 
+	getElementById("question1").innerHTML = questions[0];
+	document.getElementById("answer1").innerHTML = answers[0];
+
+	document.getElementById("question2").innerHTML = questions[1];
+	document.getElementById("answer2").innerHTML = answers[1];
+
+	document.getElementById("question3").innerHTML = questions[2];
+	document.getElementById("answer3").innerHTML = answers[2];
+	
+ */
+ 
+ window.onload = function() {
+ 	for (var counter = 0; counter < questions.length; counter++) {
+		var questionCount = "question" + (counter+1);
+		var answerCount = "answer" + (counter+1);
+ 		
+ 		document.getElementById(questionCount).innerHTML = questions[counter];
+		document.getElementById(answerCount).innerHTML = answers[counter];
+
+	}
+ }
+
+
+
+</script>
+
+<style>
+
+div { width: 650px; margin-bottom:20px}
+
+p {width:250px;height:100px; background-color:rgba(125,0,0,.25);border:1px solid black;padding:10px}
+
+p.question, p.answer {float: left; margin-right:30px;}
+p.answer {display:none; background-color: rgba(0,200,0,.25)}
+
+p.question:hover + p.answer {display:inline}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h1>Example Quiz Reveal Using CSS</h1>
+	
+	
+	Question 1
+	<div>
+	<p id="question1" class="question question1"></p>
+	<p id="answer1" class="answer"></p>
+	<br style="clear:both">
+	</div>
+	
+	Question 2
+	<div>
+	<p id="question2" class="question question2"></p>
+	<p id="answer2" class="answer"></p>
+	<br style="clear:both">
+	</div>
+	
+	Question 3
+	<div>
+	<p id="question3" class="question question3"></p>
+	<p id="answer3" class="answer"></p>
+	<br style="clear:both">
+	</div>
+	
+	
+</body>
+</html>
