@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+ <script>
+function capitalizeTxt(txt) {
+  return txt.charAt(0).toUpperCase() + txt.slice(1);
+}
+
+function processSentence(sentence) {
+    let newSentence = '';
+
+    let words = sentence.split(" ");
+    for (var i = 0; i < words.length; i++) {
+        newSentence += capitalizeTxt(words[i]+ " ");
+    }
+    console.log(newSentence);
+
+    return newSentence;
+}
+
+    // const str = "This is an amazing sentence.";
+    // let newString = processSentence(str);
+    // console.log(newString);
+
+
+    function buttonClick(event) {
+        let start = document.getElementById("sentence").value;
+        let capitalized = processSentence(start);
+        let target = document.getElementById("output");
+        target.innerText = capitalized;
+    }
+
+ </script>  
+
+<form onsubmit="event.preventDefault();buttonClick()">
+    <label for="sentence">Enter a sentence </label>
+    <input id="sentence" type="text" name="sentence" />
+    <button onclick="buttonClick()">Click Me</button>
+</form>
+
+<div id="output"></div>
+
+    </body>
+</html>

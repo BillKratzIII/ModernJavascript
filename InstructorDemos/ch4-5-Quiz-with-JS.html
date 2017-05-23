@@ -32,11 +32,22 @@ var answers = ["February 9th, 1964",
  		
  		document.getElementById(questionCount).innerHTML = questions[counter];
 		document.getElementById(answerCount).innerHTML = answers[counter];
-
+		
+		// document.getElementById(questionCount).addEventListener('click',
+		// 		(event)=> {
+		// 			console.log(event.target.nextElementSibling.style.display="inline");
+		// 		}
+		// )
 	}
+
+	
+
  }
 
-
+function handleQuestion(number) {
+		let answer = document.getElementById("answer"+number);
+		answer.style.display = "inline";
+}
 
 </script>
 
@@ -49,7 +60,7 @@ p {width:250px;height:100px; background-color:rgba(125,0,0,.25);border:1px solid
 p.question, p.answer {float: left; margin-right:30px;}
 p.answer {display:none; background-color: rgba(0,200,0,.25)}
 
-p.question:hover + p.answer {display:inline}
+/*p.question:hover + p.answer {display:inline}*/
 
 </style>
 
@@ -65,7 +76,7 @@ p.question:hover + p.answer {display:inline}
 	
 	Question 1
 	<div>
-	<p id="question1" class="question question1"></p>
+	<p id="question1" class="question question1" onclick="handleQuestion(1)"></p>
 	<p id="answer1" class="answer"></p>
 	<br style="clear:both">
 	</div>
