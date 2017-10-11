@@ -24,6 +24,13 @@
     <div id="displayNow"></div>
 
     <script>
+        function doSomethingForALongTime() {
+            for (var index = 0; index < 2000; index++) {
+                var throwAway = index;
+                
+            }
+        }
+
         let now = new Date();
         document.getElementById("displayNow").innerHTML = now;
 
@@ -40,6 +47,10 @@
         doSomethingForALongTime();
         var end = Date.now();
         var elapsed = end - start; // elapsed time in milliseconds
+
+        let specialDay = new Date('January 1, 2011 08:33:00');
+        console.log('specialDay = ' + specialDay);
+
     </script>
 
     <script src="../scripts/header.js"></script>
