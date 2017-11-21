@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>String Formatting</title>
+    <link rel="stylesheet" type="text/css" href="./styles/myStyle.css">
+</head>
+
+<body>
+    <h1>String Formatting</h1>
+
+    <h3>Capitalize the First Letter of Every Word</h3>
+    <form id="capitalForm">
+        <label for="string">Enter a string to be formatted:</label>
+        <input type="text" id="string" required/>
+        <button type="submit" onclick="processText()">Submit</button>
+    </form>
+
+    <p id="capitalResultLabel" class="originallyHidden">Result:</p>
+    <p id="capitalResult"></p>
+
+    <h3>Alternate All Caps with Every Other</h3>
+    <form id="alternateForm">
+        <label for="greeting">Enter text:</label>
+        <input type="text" id="greeting" required/>
+        <button type="submit" onclick="runFormatting()">Submit</button>
+    </form>
+
+    <p id="alternateResultLabel" class="originallyHidden">Result:</p>
+    <p id="alternateResult"></p>
+
+    <script src="./scripts/stringUtils.js"></script>
+</body>
+
+</html>

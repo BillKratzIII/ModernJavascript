@@ -80,6 +80,16 @@
         "Trip Hop"
       ],
       "id": 7
+    },
+    {
+      "name": "some band",
+      "city": "Baltimore, MD",
+      "country": "USA",
+      "yearFormed": "2017",
+      "genres": [
+        "all"
+      ],
+      "id": 8
     }
   ]
 }
